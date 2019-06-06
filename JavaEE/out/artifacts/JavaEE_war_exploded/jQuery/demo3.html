@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <style>
+        .ipt{
+            color: red;
+        }
+        table{
+            border-collapse:collapse; //collapse 合并单一边框
+        }
+        table,tr,td{
+            border: 1px solid #000000;
+        }
+    </style>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+
+<!--演示基本选择器-->
+<div id="d1">
+    <h1>jQuery选择器</h1>
+    <p>包括如下种类:</p>
+    <p>1.基本选择器</p>
+    <p class="ipt">2.层次选择器</p>
+    <p class="ipt">3.过滤选择器</p>
+    <p>4.表单选择器</p>
+    <p style="display: none;">5.其他选择器</p>
+</div>
+<!--演示层次选择器-->
+<div id="d2">
+    <ul>
+        <li>杭州</li>
+        <li id="nb">宁波</li>
+        <li>温州</li>
+        <li>嘉兴</li>
+    </ul>
+</div>
+<!--演示基本过滤选择器-->
+<div id="d3">
+    <table>
+        <tr>
+            <th align="center">基本过滤选择器</th>
+        </tr>
+        <tr>
+            <td>first</td>
+            <td>第一个元素</td>
+        </tr>
+        <tr>
+            <td>last</td>
+            <td>最后一个元素</td>
+        </tr>
+        <tr>
+            <td>not(selector)</td>  <!--selector 选择器-->
+            <td>把selector排除在外</td>
+        </tr>
+        <tr>
+            <td>even</td>
+            <td>挑选偶数行</td>
+        </tr>
+        <tr>
+            <td>odd</td>
+            <td>挑选奇迹行</td>
+        </tr>
+        <tr>
+            <td>eq(index)</td>
+            <td>下标等于index的元素</td>
+        </tr>
+        <tr>
+            <td>gt(index)</td>
+            <td>下标大于index的元素</td>
+        </tr>
+        <tr>
+            <td>lt(index)</td>
+            <td>下标小于index的元素</td>
+        </tr>
+        <tr>
+            <th align="center">内容过滤选择器</th>
+        </tr>
+        <tr>
+            <td>contains(text)</td>
+            <td>匹配包含给定义文本的元素</td>
+        </tr>
+        <tr>
+            <td>empty</td>
+            <td>匹配所有不包含元素或文本的空元素</td>
+        </tr>
+        <tr>
+            <th align="center">可见性过滤器</th>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>匹配所有不可见元素，或type为hidden的元素</td>
+        </tr>
+        <tr>
+            <td>visible</td>
+            <td>匹配所有的可见元素</td>
+        </tr>
+        <tr>
+            <th>属性过滤选择器</th>
+        </tr>
+        <tr>
+            <td>attribute</td>
+            <td>匹配具有attribute属性的元素</td>
+        </tr>
+        <tr>
+            <td>attribute = value</td>
+            <td>匹配属性等于value的元素</td>
+        </tr>
+        <tr>
+            <td>attribute != value</td>
+            <td>匹配属性不等于value的元素</td>
+        </tr>
+        <tr>
+            <th>状态过滤选择器</th>
+        </tr>
+        <tr>
+            <td>enabled</td>
+            <td>匹配可用的元素</td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>匹配不可用的元素</td>
+        </tr>
+        <tr>
+            <td>checked</td>
+            <td>匹配选中的checkbox</td>
+        </tr>
+        <tr>
+            <td>selected</td>
+            <td>匹配选中的option</td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+
+
+    <table>
+        <tr>
+            <td>鼠标</td>
+            <td>黑色</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>键盘</td>
+            <td>白色</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>耳机</td>
+            <td>红色</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>U盘</td>
+            <td>蓝色</td>
+            <td>60</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

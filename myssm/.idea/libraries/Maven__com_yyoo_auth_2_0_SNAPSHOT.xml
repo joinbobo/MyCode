@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yyoo:auth:2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yyoo/auth/2.0-SNAPSHOT/auth-2.0-20190430.022555-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yyoo/auth/2.0-SNAPSHOT/auth-2.0-20190430.022555-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yyoo/auth/2.0-SNAPSHOT/auth-2.0-20190430.022555-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

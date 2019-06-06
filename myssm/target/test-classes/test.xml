@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" 
+
+[
+		<!ENTITY driverClass "com.mysql.cj.jdbc.Driver">
+		<!ENTITY connectionURL "jdbc:mysql://127.0.0.1:3306/ruanjian">
+		<!ENTITY schema "ruanjian">
+		<!ENTITY userId "test">
+		<!ENTITY password "test">
+
+		<!ENTITY beanPath "com.yyoo.myssm.beans.auto">
+		<!ENTITY daoPath "com.yyoo.myssm.mapper.auto">
+		<!ENTITY sqlmapPath "mapper.auto">
+
+		<!ENTITY beanProject "src\main\java">
+		<!ENTITY daoProject "src\main\java">
+		<!ENTITY sqlmapProject "src\main\resources">
+
+		<!ENTITY daoType "XMLMAPPER">
+]>
+
+<generatorConfiguration >
+
+	<!--MyBatis3Simple或MyBatis3-->
+  <context id="context1" targetRuntime="MyBatis3">
+
+	  <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+	  <property name="javaFileEncoding" value="UTF-8"/>
+
+  	<!-- plugin -->
+  	<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+  		<property name="searchString" value="Example$" />
+		<property name="replaceString" value="Criteria" />
+  	</plugin>
+  	<!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>-->
+  	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+  	<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+	<!-- 解决使用了自定义注释后map.xml文件重复生成的问题-->
+	<plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"></plugin>
+
+	  <!-- 这里的type里写的是你的实现类的类全路径 -->
+	  <commentGenerator type="com.yyoo.mybatis.generator.MyCommentGenerator">
+		  <!--<property name="suppressAllComments" value="true" />-->
+		  <!--<property name="suppressDate" value="false" />-->
+	  </commentGenerator>
+
+	<!-- jdbc-->
+	<jdbcConnection driverClass="&driverClass;" connectionURL="&connectionURL;?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false"
+		userId="&userId;" password="&password;" >
+
+		<!-- 针对oracle数据库 -->
+		<!--<property name="remarksReporting" value="true"></property>-->
+
+		<!--针对mysql数据库-->
+		<property name="useInformationSchema" value="true"></property>
+
+	</jdbcConnection>
+
+	<javaTypeResolver>
+		<property name="forceBigDecimals" value="false" />
+	</javaTypeResolver>
+
+	<!-- JavaBean -->
+	  <!--targetProject属性如果是eclipse就是src就可以了，其他环境下需要是一个实际存在的目录如：D:\generator-->
+	<javaModelGenerator targetPackage="&beanPath;" targetProject="&beanProject;">
+		<property name="enableSubPackages" value="false" />
+		<property name="trimStrings" value="true" />
+		<!-- <property name="rootClass" value="apps.myFrame.baseBean.BaseBean" /> -->
+	</javaModelGenerator>
+
+	<!-- sqlMap -->
+	<sqlMapGenerator targetPackage="&sqlmapPath;" targetProject="&sqlmapProject;">
+		<property name="enableSubPackages" value="false" />
+	</sqlMapGenerator>
+
+	<!-- dao -->
+	<javaClientGenerator targetPackage="&daoPath;" targetProject="&daoProject;" type="&daoType;">
+		<property name="enableSubPackages" value="false" />
+		<!-- <property name="rootInterface" value="com.yyoo.core.app.BaseDAO" /> -->
+	</javaClientGenerator>
+
+
+
+	  <!-- ******************************************************************************* -->
+	  <table schema="&schema;" catalog="&schema;" tableName="emp" domainObjectName="EmpBean"
+			 enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			 enableSelectByExample="false" selectByExampleQueryId="false">
+		  <!-- false尝试骆驼大小写返回的名称,true:直接用表中的字段名称 -->
+		  <property name="useActualColumnNames" value="false" />
+		  <!-- 不将schema或catalog添加到生成的SQL中的表名称 -->
+		  <property name="ignoreQualifiersAtRuntime" value="true"/>
+	  </table>
+	  <!-- ******************************************************************************* -->
+
+	  <!-- ******************************************************************************* -->
+	  <table schema="&schema;" catalog="&schema;" tableName="dept" domainObjectName="DeptBean"
+			 enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			 enableSelectByExample="false" selectByExampleQueryId="false">
+		  <!-- false尝试骆驼大小写返回的名称,true:直接用表中的字段名称 -->
+		  <property name="useActualColumnNames" value="false" />
+		  <!-- 不将schema或catalog添加到生成的SQL中的表名称 -->
+		  <property name="ignoreQualifiersAtRuntime" value="true"/>
+	  </table>
+	  <!-- ******************************************************************************* -->
+
+
+  </context>
+</generatorConfiguration>

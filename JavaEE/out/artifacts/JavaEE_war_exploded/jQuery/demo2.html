@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        //验证jQuery对象的本质是DOM数组
+        function f1(){
+            //通过选择器选中节点，得到jQuery对象
+            var ps = $("p");
+            //选择的结果是 p 的数组，可以进行数组操作
+            // alert(ps.length);
+            for(var i=0; i<ps.length; i++){
+                //ps[i] 和 ps.get(i)等价
+                //ps[i] 是js默认的获取数组元素的方式
+                //这两种方式返回的都是DOM对象（js对象）
+                //而不是jQuery对象，所以不能通过这个
+                //对象直接调用jQuery的方法
+
+                // var p = ps.get(i);
+                var p = ps[i];
+                alert(p.innerText); //内部文本
+            }
+        }
+        //将当前点击的图片变大成300*300
+        //参数img接收收入的this this就是
+        //当前正在点击的图片节点，它是DOM对象
+        function f2(img){
+            //jQuery对象有width()和height()方法
+            //可以直接获取、修改节点的宽高。现在要
+            //调用这2个方法改变图片的宽高，首选需要
+            //将DOM对象转化为jQuery对象
+            $(img).width("300px").height("300px");
+        }
+    </script>
+</head>
+<body>
+
+<h1>jQuery对象</h1>
+<p>1.jQuery统一封装的对象</p>
+<p>2.jQuery选择器选择的结果是jQuery对象</p>
+<p>3.jQuery对象本质上是一个DOM数组</p>
+<div>
+    <button onclick="f1();">按钮1</button>
+</div>
+<div>
+    <img style="width:100px;height:100px;" src="images/01.jpg" onclick="f2(this);"/>    <!-- vent 事件源也可 -->
+    <img style="width:100px;height:100px;" src="images/02.jpg" onclick="f2(this);"/>
+    <img style="width:100px;height:100px;" src="images/03.jpg" onclick="f2(this);"/>
+</div>
+</body>
+</html>

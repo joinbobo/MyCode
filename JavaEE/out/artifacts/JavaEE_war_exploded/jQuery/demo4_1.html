@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <script type="text/javascript"></script>
+    <script>
+        var index = 0; //循环次数
+        function  start(){
+            //每隔一秒执行一次function
+            setInterval(function(){ //setInterval不断调用该函数，直到被 clearInterval()调用或窗口关闭
+                //将所有的li隐藏
+                var ul = document.getElementById("photos");
+                var lis = ul.getElementsByTagName("li");
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = "hide";
+                }
+                //将下一个li显示
+                index++;
+                lis[index%lis.length].className = "show";
+            },1000);
+        }
+    </script>
+</head>
+<body onload="start();">    <!-- onload页面加载时间 表示在页面加载后调用start()函数 -->
+<ul id="photos">
+    <li class="show"><img src="images/01.jpg"/></li>
+    <li class="hide"><img src="images/02.jpg"/></li>
+    <li class="hide"><img src="images/03.jpg"/></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        //使用jQuery字体变小
+        function small() {
+            var font_size = $("p").css("font-size");
+            var size = parseInt(font_size.replace("px",""));
+            $("p").css("font-size",(size-1) + "px");
+        }
+        function big(){
+            var font_size = $("p").css("font-size");
+            var size = parseInt(font_size.replace("px",""));
+            $("p").css("font-size",(size+1) + "px");
+        }
+    </script>
+</head>
+<body>
+
+<button onclick="big();">+</button>
+<button onclick="small();">-</button>
+
+<h1>jQuery的使用步骤</h1>
+<p style="font-size:14px;">1.引用jQuery</p>
+<p style="font-size:14px;">2.使用jQuery选择器定位节点</p>
+<p style="font-size:14px;">3.调用jQuery方法操作节点</p>
+</body>
+<!--<script src="../js/jquery-3.3.1.min.js"/>-->
+<script>
+    // function small(){
+    //     var font_size = $("p").css("font-size");
+    //     var size = parseInt(font_size.replace("px",""));
+    //     $("p").css("font-size",(size+1)+"px");
+    // }
+
+</script>
+</html>
