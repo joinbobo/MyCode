@@ -45,5 +45,10 @@ public class EmpServiceImpl implements EmpService {
         empBeanMapper.deleteByPrimaryKey(id);
     }
 
+    @Override
+    public void update(EmpBean empbean) {
+        empBeanMapper.updateByPrimaryKey(empbean);
+    }
+
 
 }

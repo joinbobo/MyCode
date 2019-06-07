@@ -39,4 +39,10 @@ public class EmpController {
         EmpBean empBean = empService.getBeanById(queryEmpById.getId());
         return MyResponse.success("删除成功");
     }
+
+    @RequestMapping("/update")
+    public MyResponse update(@RequestBody EmpBean empBean){
+        empService.update(empBean);
+        return MyResponse.success("修改成功");
+    }
 }

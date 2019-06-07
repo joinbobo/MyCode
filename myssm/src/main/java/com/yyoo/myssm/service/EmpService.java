@@ -14,4 +14,6 @@ public interface EmpService {
     void insert(EmpBean empBean);
 
     void delete(Long id);
+
+    void update(EmpBean empbean);
 }
