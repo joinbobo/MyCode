@@ -1,6 +1,7 @@
 package com.dingli.javaee.service;
 
 import com.dingli.javaee.bean.Student;
+import com.dingli.javaee.bean.param.LoginParam;
 import com.dingli.javaee.bean.param.Pager;
 import com.dingli.javaee.bean.param.StuParam;
 
@@ -22,4 +23,5 @@ public interface StudentService {
     void delete(long id);
 
     void update(Student s);
+
 }

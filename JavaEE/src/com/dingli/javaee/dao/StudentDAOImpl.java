@@ -1,6 +1,7 @@
 package com.dingli.javaee.dao;
 
 import com.dingli.javaee.bean.Student;
+import com.dingli.javaee.bean.param.LoginParam;
 import com.dingli.javaee.bean.param.Pager;
 import com.dingli.javaee.bean.param.StuParam;
 import com.dingli.javaee.jdbc.JDBCUtil;
@@ -278,4 +279,5 @@ public class StudentDAOImpl implements StudentDAO{
             JDBCUtil.close(conn,psd,null);
         }
     }
+
 }

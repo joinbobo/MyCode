@@ -1,6 +1,7 @@
 package com.dingli.javaee.service;
 
 import com.dingli.javaee.bean.Student;
+import com.dingli.javaee.bean.param.LoginParam;
 import com.dingli.javaee.bean.param.Pager;
 import com.dingli.javaee.bean.param.StuParam;
 import com.dingli.javaee.dao.StudentDAO;
@@ -37,4 +38,5 @@ public class StudentServiceImpl implements com.dingli.javaee.service.StudentServ
     public void update(Student s) {
         studentDAO.update(s);
     }
+
 }
